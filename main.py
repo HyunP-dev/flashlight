@@ -1,9 +1,11 @@
 from typing import *
+from io import BytesIO
 import requests
 from bs4 import BeautifulSoup
 import urllib.parse
 from hashlib import md5
-
+from PIL import Image
+from transformers import pipeline
 
 PROXIES = {
     "http": "socks5h://127.0.0.1:9150",
@@ -33,8 +35,14 @@ def get_image_srcs(url) -> Generator[str, None, None]:
 
 
 def is_nsfw(raw) -> bool:
-    # TODO: NSFW Content Detection
-    return True
+    img = Image.open(BytesIO(raw))
+    classifier = pipeline("image-classification",
+                          model="Falconsai/nsfw_image_detection")
+    for e in classifier(img):
+        if e["label"] == "nsfw":
+            if e["score"] > 0.8:
+                return True
+    return False
 
 
 def main():
@@ -51,13 +59,10 @@ def main():
             req = requests.get(url=image_url, proxies=PROXIES)
             raw = req.content
 
-            if not is_nsfw(raw):
-                continue
-            
             filename = image_url.split("/")[-1]
             md5_ = md5(raw).digest().hex()
-
-            print(filename, md5_, sep="\t")
+            if is_nsfw(raw):
+                print(filename, md5_, sep="\t")
 
 
 if __name__ == "__main__":
