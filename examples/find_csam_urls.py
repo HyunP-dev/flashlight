@@ -1,14 +1,13 @@
 import requests
 from hashlib import md5
+import urllib
 
-from flashlight.scrapper import *
+from flashlight.scrapper import PROXIES, get_onion_links, get_image_srcs
 from flashlight.model import is_nsfw
 
 
 def main():
-    with open("hidden-wiki-url.txt") as f:
-        wiki_url = f.read().strip()
-
+    wiki_url = ""
     wiki_html = requests.get(url=wiki_url, proxies=PROXIES).text
 
     for link in get_onion_links(wiki_html):
