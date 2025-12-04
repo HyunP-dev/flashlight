@@ -1,0 +1,405 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>flashlight package &mdash; flashlight  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> flashlight
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">flashlight package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-flashlight.ahmia">flashlight.ahmia module</a><ul>
+<li><a class="reference internal" href="#flashlight.ahmia.get_banned"><code class="docutils literal notranslate"><span class="pre">get_banned()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-flashlight.blockchain">flashlight.blockchain module</a><ul>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo"><code class="docutils literal notranslate"><span class="pre">BalanceInfo</span></code></a><ul>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo.address"><code class="docutils literal notranslate"><span class="pre">BalanceInfo.address</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo.confirmed"><code class="docutils literal notranslate"><span class="pre">BalanceInfo.confirmed</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo.received"><code class="docutils literal notranslate"><span class="pre">BalanceInfo.received</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo.txs"><code class="docutils literal notranslate"><span class="pre">BalanceInfo.txs</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo.unconfirmed"><code class="docutils literal notranslate"><span class="pre">BalanceInfo.unconfirmed</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.BalanceInfo.utxo"><code class="docutils literal notranslate"><span class="pre">BalanceInfo.utxo</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flashlight.blockchain.get_balance_info"><code class="docutils literal notranslate"><span class="pre">get_balance_info()</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.get_tx_ids"><code class="docutils literal notranslate"><span class="pre">get_tx_ids()</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.get_tx_info"><code class="docutils literal notranslate"><span class="pre">get_tx_info()</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.blockchain.get_tx_infos"><code class="docutils literal notranslate"><span class="pre">get_tx_infos()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-flashlight.checkitonion">flashlight.checkitonion module</a><ul>
+<li><a class="reference internal" href="#flashlight.checkitonion.CheckItOnion"><code class="docutils literal notranslate"><span class="pre">CheckItOnion</span></code></a><ul>
+<li><a class="reference internal" href="#flashlight.checkitonion.CheckItOnion.HEADERS"><code class="docutils literal notranslate"><span class="pre">CheckItOnion.HEADERS</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.checkitonion.CheckItOnion.URL"><code class="docutils literal notranslate"><span class="pre">CheckItOnion.URL</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.checkitonion.CheckItOnion.refresh"><code class="docutils literal notranslate"><span class="pre">CheckItOnion.refresh()</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.checkitonion.CheckItOnion.topsites"><code class="docutils literal notranslate"><span class="pre">CheckItOnion.topsites</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flashlight.checkitonion.Website"><code class="docutils literal notranslate"><span class="pre">Website</span></code></a><ul>
+<li><a class="reference internal" href="#flashlight.checkitonion.Website.is_running"><code class="docutils literal notranslate"><span class="pre">Website.is_running</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.checkitonion.Website.title"><code class="docutils literal notranslate"><span class="pre">Website.title</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.checkitonion.Website.url"><code class="docutils literal notranslate"><span class="pre">Website.url</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-flashlight.model">flashlight.model module</a><ul>
+<li><a class="reference internal" href="#flashlight.model.is_nsfw"><code class="docutils literal notranslate"><span class="pre">is_nsfw()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-flashlight.scrapper">flashlight.scrapper module</a><ul>
+<li><a class="reference internal" href="#flashlight.scrapper.get_image_srcs"><code class="docutils literal notranslate"><span class="pre">get_image_srcs()</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.scrapper.get_onion_links"><code class="docutils literal notranslate"><span class="pre">get_onion_links()</span></code></a></li>
+<li><a class="reference internal" href="#flashlight.scrapper.traverse_hrefs"><code class="docutils literal notranslate"><span class="pre">traverse_hrefs()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-flashlight">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">flashlight</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>flashlight package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/source/flashlight.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="flashlight-package">
+<h1>flashlight package<a class="headerlink" href="#flashlight-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-flashlight.ahmia">
+<span id="flashlight-ahmia-module"></span><h2>flashlight.ahmia module<a class="headerlink" href="#module-flashlight.ahmia" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.ahmia.get_banned">
+<span class="sig-prename descclassname"><span class="pre">flashlight.ahmia.</span></span><span class="sig-name descname"><span class="pre">get_banned</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.ahmia.get_banned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-flashlight.blockchain">
+<span id="flashlight-blockchain-module"></span><h2>flashlight.blockchain module<a class="headerlink" href="#module-flashlight.blockchain" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">BalanceInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">received</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">txs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unconfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">utxo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flashlight.blockchain.BalanceInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.address">
+<span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.address" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.confirmed">
+<span class="sig-name descname"><span class="pre">confirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.confirmed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.received">
+<span class="sig-name descname"><span class="pre">received</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.received" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.txs">
+<span class="sig-name descname"><span class="pre">txs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.txs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.unconfirmed">
+<span class="sig-name descname"><span class="pre">unconfirmed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.unconfirmed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.utxo">
+<span class="sig-name descname"><span class="pre">utxo</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.utxo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.blockchain.get_balance_info">
+<span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_balance_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#flashlight.blockchain.BalanceInfo" title="flashlight.blockchain.BalanceInfo"><span class="pre">BalanceInfo</span></a></span></span><a class="headerlink" href="#flashlight.blockchain.get_balance_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.blockchain.get_tx_ids">
+<span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_tx_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.blockchain.get_tx_ids" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.blockchain.get_tx_info">
+<span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_tx_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#flashlight.blockchain.get_tx_info" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.blockchain.get_tx_infos">
+<span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_tx_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tx_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.blockchain.get_tx_infos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-flashlight.checkitonion">
+<span id="flashlight-checkitonion-module"></span><h2>flashlight.checkitonion module<a class="headerlink" href="#module-flashlight.checkitonion" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flashlight.checkitonion.</span></span><span class="sig-name descname"><span class="pre">CheckItOnion</span></span><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.HEADERS">
+<span class="sig-name descname"><span class="pre">HEADERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'user-agent':</span> <span class="pre">'Mozilla/5.0'}</span></em><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.HEADERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.URL">
+<span class="sig-name descname"><span class="pre">URL</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'https://checkitonion.online/'</span></em><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.URL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.refresh">
+<span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.refresh" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.topsites">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topsites</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flashlight.checkitonion.Website" title="flashlight.checkitonion.Website"><span class="pre">flashlight.checkitonion.Website</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.topsites" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="flashlight.checkitonion.Website">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flashlight.checkitonion.</span></span><span class="sig-name descname"><span class="pre">Website</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_running</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flashlight.checkitonion.Website" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.checkitonion.Website.is_running">
+<span class="sig-name descname"><span class="pre">is_running</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#flashlight.checkitonion.Website.is_running" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.checkitonion.Website.title">
+<span class="sig-name descname"><span class="pre">title</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flashlight.checkitonion.Website.title" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="flashlight.checkitonion.Website.url">
+<span class="sig-name descname"><span class="pre">url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flashlight.checkitonion.Website.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-flashlight.model">
+<span id="flashlight-model-module"></span><h2>flashlight.model module<a class="headerlink" href="#module-flashlight.model" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.model.is_nsfw">
+<span class="sig-prename descclassname"><span class="pre">flashlight.model.</span></span><span class="sig-name descname"><span class="pre">is_nsfw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#flashlight.model.is_nsfw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-flashlight.scrapper">
+<span id="flashlight-scrapper-module"></span><h2>flashlight.scrapper module<a class="headerlink" href="#module-flashlight.scrapper" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.scrapper.get_image_srcs">
+<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">get_image_srcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.get_image_srcs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.scrapper.get_onion_links">
+<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">get_onion_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.get_onion_links" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="flashlight.scrapper.traverse_hrefs">
+<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">traverse_hrefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bs4.BeautifulSoup</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.traverse_hrefs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-flashlight">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-flashlight" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2025, Hyun Park.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
