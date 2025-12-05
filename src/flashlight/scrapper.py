@@ -8,7 +8,15 @@ import urllib.parse
 PROXIES = {"http": "socks5h://127.0.0.1:9150", "https": "socks5h://127.0.0.1:9150"}
 
 
-def get_onion_links(html) -> Generator[str, None, None]:
+def get_onion_links(html: str) -> Generator[str, None, None]:
+    """
+    get .onion links from html content.
+    
+    :param html: html content
+    :type html: str
+    :return: generator of .onion links
+    :rtype: Generator[str, None, None]
+    """
     bs = BeautifulSoup(html, "html5lib")
     for a in bs.select("a"):
         href = a["href"]
@@ -16,7 +24,15 @@ def get_onion_links(html) -> Generator[str, None, None]:
             yield href
 
 
-def get_image_srcs(url) -> Generator[str, None, None]:
+def get_image_srcs(url: str) -> Generator[str, None, None]:
+    """
+    get image src links from a given url.
+    
+    :param url: target url
+    :type url: str
+    :return: generator of image src links
+    :rtype: Generator[str, None, None]
+    """
     # TODO: We need to modify this to work recursively.
     try:
         req = requests.get(url=url, proxies=PROXIES)
@@ -30,9 +46,17 @@ def get_image_srcs(url) -> Generator[str, None, None]:
 
 
 def traverse_hrefs(start_url: str) -> Generator[tuple[str, BeautifulSoup], None, None]:
+    """
+    traverse href links starting from start_url.
+    
+    :param start_url: starting url
+    :type start_url: str
+    :return: generator of tuples of url and BeautifulSoup object
+    :rtype: Generator[tuple[str, BeautifulSoup], None, None]
+    """
     visited = set()
 
-    def _iterate(url):
+    def _iterate(url: str) -> Generator[tuple[str, BeautifulSoup], None, None]:
         if url in visited:
             return
         visited.add(url)

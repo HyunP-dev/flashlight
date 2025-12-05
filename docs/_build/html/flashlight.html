@@ -202,7 +202,19 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.ahmia.get_banned">
 <span class="sig-prename descclassname"><span class="pre">flashlight.ahmia.</span></span><span class="sig-name descname"><span class="pre">get_banned</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_cache</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.ahmia.get_banned" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get hash set of banned .onion sites from ahmia.fi.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>from_cache</strong> – whether to use cached result or not, defaults to True</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hash set of banned .onion sites</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-flashlight.blockchain">
@@ -211,6 +223,7 @@
 <dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">BalanceInfo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">received</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">txs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unconfirmed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">utxo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flashlight.blockchain.BalanceInfo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>data class representing balance information of a bitcoin address.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="flashlight.blockchain.BalanceInfo.address">
 <span class="sig-name descname"><span class="pre">address</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#flashlight.blockchain.BalanceInfo.address" title="Permalink to this definition">¶</a></dt>
@@ -246,22 +259,70 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.blockchain.get_balance_info">
 <span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_balance_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#flashlight.blockchain.BalanceInfo" title="flashlight.blockchain.BalanceInfo"><span class="pre">BalanceInfo</span></a></span></span><a class="headerlink" href="#flashlight.blockchain.get_balance_info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get balance info of a bitcoin address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<em>str</em>) – bitcoin address</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>balance info of the address</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#flashlight.blockchain.BalanceInfo" title="flashlight.blockchain.BalanceInfo">BalanceInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.blockchain.get_tx_ids">
 <span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_tx_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.blockchain.get_tx_ids" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get transaction ids of a bitcoin address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<em>str</em>) – bitcoin address</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>set of transaction ids</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>set[str]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.blockchain.get_tx_info">
 <span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_tx_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#flashlight.blockchain.get_tx_info" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get transaction info by a bitcoin transaction id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tx_id</strong> (<em>str</em>) – bitcoin transaction id</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>transaction info</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.blockchain.get_tx_infos">
 <span class="sig-prename descclassname"><span class="pre">flashlight.blockchain.</span></span><span class="sig-name descname"><span class="pre">get_tx_infos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tx_id</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.blockchain.get_tx_infos" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get transaction info by a bitcoin transaction id.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tx_id</strong> – bitcoin transaction id</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>transaction info</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterable[dict]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-flashlight.checkitonion">
@@ -270,6 +331,7 @@
 <dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flashlight.checkitonion.</span></span><span class="sig-name descname"><span class="pre">CheckItOnion</span></span><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>class to scrape checkitonion.online to retrieve top .onion websites.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.HEADERS">
 <span class="sig-name descname"><span class="pre">HEADERS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'user-agent':</span> <span class="pre">'Mozilla/5.0'}</span></em><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.HEADERS" title="Permalink to this definition">¶</a></dt>
@@ -283,12 +345,30 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.refresh">
 <span class="sig-name descname"><span class="pre">refresh</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.refresh" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>refresh the list of top websites from checkitonion.online</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self</strong> – The instance of the class.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="flashlight.checkitonion.CheckItOnion.topsites">
 <em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">topsites</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#flashlight.checkitonion.Website" title="flashlight.checkitonion.Website"><span class="pre">flashlight.checkitonion.Website</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#flashlight.checkitonion.CheckItOnion.topsites" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>get the list of top websites.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self</strong> – The instance of the class.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of top websites.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<a class="reference internal" href="#flashlight.checkitonion.Website" title="flashlight.checkitonion.Website">Website</a>]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -296,6 +376,7 @@
 <dt class="sig sig-object py" id="flashlight.checkitonion.Website">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">flashlight.checkitonion.</span></span><span class="sig-name descname"><span class="pre">Website</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_running</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#flashlight.checkitonion.Website" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>data class representing a website with its title, URL, and running status.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="flashlight.checkitonion.Website.is_running">
 <span class="sig-name descname"><span class="pre">is_running</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#flashlight.checkitonion.Website.is_running" title="Permalink to this definition">¶</a></dt>
@@ -318,26 +399,74 @@
 <span id="flashlight-model-module"></span><h2>flashlight.model module<a class="headerlink" href="#module-flashlight.model" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.model.is_nsfw">
-<span class="sig-prename descclassname"><span class="pre">flashlight.model.</span></span><span class="sig-name descname"><span class="pre">is_nsfw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#flashlight.model.is_nsfw" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">flashlight.model.</span></span><span class="sig-name descname"><span class="pre">is_nsfw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bytes</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#flashlight.model.is_nsfw" title="Permalink to this definition">¶</a></dt>
+<dd><p>classify an image as NSFW or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>raw</strong> (<em>bytes</em>) – raw image bytes to be classified</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if the image is classified as NSFW with high confidence, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-flashlight.scrapper">
 <span id="flashlight-scrapper-module"></span><h2>flashlight.scrapper module<a class="headerlink" href="#module-flashlight.scrapper" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.scrapper.get_image_srcs">
-<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">get_image_srcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.get_image_srcs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">get_image_srcs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.get_image_srcs" title="Permalink to this definition">¶</a></dt>
+<dd><p>get image src links from a given url.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – target url</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generator of image src links</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Generator[str, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.scrapper.get_onion_links">
-<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">get_onion_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.get_onion_links" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">get_onion_links</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">html</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.get_onion_links" title="Permalink to this definition">¶</a></dt>
+<dd><p>get .onion links from html content.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>html</strong> (<em>str</em>) – html content</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generator of .onion links</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Generator[str, None, None]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="flashlight.scrapper.traverse_hrefs">
 <span class="sig-prename descclassname"><span class="pre">flashlight.scrapper.</span></span><span class="sig-name descname"><span class="pre">traverse_hrefs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bs4.BeautifulSoup</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#flashlight.scrapper.traverse_hrefs" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>traverse href links starting from start_url.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>start_url</strong> (<em>str</em>) – starting url</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generator of tuples of url and BeautifulSoup object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Generator[tuple[str, BeautifulSoup], None, None]</p>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 <section id="module-flashlight">

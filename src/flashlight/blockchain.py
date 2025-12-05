@@ -14,6 +14,9 @@ __HEADERS = {
 
 @dataclass
 class BalanceInfo:
+    """
+    data class representing balance information of a bitcoin address.
+    """
     address: str
     confirmed: int
     received: int
@@ -23,12 +26,28 @@ class BalanceInfo:
 
 
 def get_balance_info(address: str) -> BalanceInfo:
+    """
+    get balance info of a bitcoin address.
+    
+    :param address: bitcoin address
+    :type address: str
+    :return: balance info of the address
+    :rtype: BalanceInfo
+    """
     url = f"https://api.blockchain.info/haskoin-store/btc/address/{address}/balance"
     resp = requests.get(url, headers=__HEADERS).json()
     return BalanceInfo(**resp)
 
 
 def get_tx_ids(address: str) -> set[str]:
+    """
+    get transaction ids of a bitcoin address.
+    
+    :param address: bitcoin address
+    :type address: str
+    :return: set of transaction ids
+    :rtype: set[str]
+    """
     url = (
         "https://api.blockchain.info/haskoin-store/btc/address/%s/transactions?limit=10000&offset=0"
         % address
@@ -42,12 +61,27 @@ def get_tx_ids(address: str) -> set[str]:
 
 @cache
 def get_tx_info(tx_id: str) -> dict:
+    """
+    get transaction info by a bitcoin transaction id.
+    
+    :param tx_id: bitcoin transaction id
+    :type tx_id: str
+    :return: transaction info
+    :rtype: dict
+    """
     url = "https://api.blockchain.info/haskoin-store/btc/transaction/" + tx_id
     resp = requests.get(url, headers=__HEADERS).json()
     return resp
 
 
 def get_tx_infos(*tx_id) -> Iterable[dict]:
+    """
+    get transaction info by a bitcoin transaction id.
+    
+    :param tx_id: bitcoin transaction id
+    :return: transaction info
+    :rtype: Iterable[dict]
+    """
     def __get_tx_infos(*tx_id):
         url = (
             "https://api.blockchain.info/haskoin-store/btc/transactions?txids="

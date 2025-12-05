@@ -6,12 +6,18 @@ from bs4 import BeautifulSoup
 
 @dataclass
 class Website:
+    """
+    data class representing a website with its title, URL, and running status.
+    """
     title: str
     url: str
     is_running: bool
 
 
 class CheckItOnion:
+    """
+    class to scrape checkitonion.online to retrieve top .onion websites.
+    """
     URL = "https://checkitonion.online/"
     HEADERS = {"user-agent": "Mozilla/5.0"}
 
@@ -20,6 +26,11 @@ class CheckItOnion:
         self.refresh()
 
     def refresh(self):
+        """
+        refresh the list of top websites from checkitonion.online
+        
+        :param self: The instance of the class.
+        """
         html = requests.get(CheckItOnion.URL, headers=CheckItOnion.HEADERS).text
         bs = BeautifulSoup(html, "html5lib")
         left_div_elements = bs.select(".leftdiv")
@@ -41,4 +52,11 @@ class CheckItOnion:
 
     @property
     def topsites(self) -> list[Website]:
+        """
+        get the list of top websites.
+        
+        :param self: The instance of the class.
+        :return: list of top websites.
+        :rtype: list[Website]
+        """
         return self._topsites
